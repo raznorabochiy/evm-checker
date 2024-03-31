@@ -1,5 +1,7 @@
 # EVM Checker 🐆
 
+<img src="https://raw.githubusercontent.com/raznorabochiy/evm-checker/main/cheetah.jpg" width="800" />
+
 ## Установка
 
 ```
