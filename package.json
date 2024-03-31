@@ -1,0 +1,40 @@
+{
+  "name": "evm-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx index.ts",
+    "arbitrum": "npx tsx index.ts arbitrum",
+    "arbitrum-nova": "npx tsx index.ts arbitrum-nova",
+    "base": "npx tsx index.ts base",
+    "blast": "npx tsx index.ts blast",
+    "bnb": "npx tsx index.ts bnb",
+    "ethereum": "npx tsx index.ts ethereum",
+    "fantom": "npx tsx index.ts fantom",
+    "linea": "npx tsx index.ts linea",
+    "optimism": "npx tsx index.ts optimism",
+    "polygon": "npx tsx index.ts polygon",
+    "scroll": "npx tsx index.ts scroll",
+    "zksync": "npx tsx index.ts zksync",
+    "zora": "npx tsx index.ts zora",
+    "postinstall": "npx touch wallets.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "raznorabochiy",
+  "license": "ISC",
+  "dependencies": {
+    "cli": "^1.0.1",
+    "ethereum-multicall": "^2.23.0",
+    "ethers": "^6.3.0",
+    "inquirer": "^9.2.17",
+    "touch": "^3.1.0",
+    "tsx": "^4.7.1"
+  },
+  "devDependencies": {
+    "@types/cli": "^0.11.25",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.12.2"
+  }
+}
