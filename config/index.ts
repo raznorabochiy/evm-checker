@@ -12,6 +12,11 @@ import {
 
 import { COLUMNS as COLUMNS_BASE, RPC_URL as RPC_URL_BASE } from "./base";
 
+import {
+  COLUMNS as COLUMNS_BERACHAIN_TESTNET,
+  RPC_URL as RPC_URL_BERACHAIN_TESTNET,
+} from "./berachain-testnet";
+
 import { COLUMNS as COLUMNS_BLAST, RPC_URL as RPC_URL_BLAST } from "./blast";
 
 import { COLUMNS as COLUMNS_BNB, RPC_URL as RPC_URL_BNB } from "./bnb";
@@ -57,6 +62,10 @@ export const CONFIG: Config = {
   [Network.BASE]: {
     RPC_URL: RPC_URL_BASE,
     COLUMNS: COLUMNS_BASE,
+  },
+  [Network.BERACHAIN_TESTNET]: {
+    RPC_URL: RPC_URL_BERACHAIN_TESTNET,
+    COLUMNS: COLUMNS_BERACHAIN_TESTNET,
   },
   [Network.BLAST]: {
     RPC_URL: RPC_URL_BLAST,

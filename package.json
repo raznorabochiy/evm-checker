@@ -9,6 +9,7 @@
     "arbitrum": "npx tsx index.ts arbitrum",
     "arbitrum-nova": "npx tsx index.ts arbitrum-nova",
     "base": "npx tsx index.ts base",
+    "berachain-testnet": "npx tsx index.ts berachain-testnet",
     "blast": "npx tsx index.ts blast",
     "bnb": "npx tsx index.ts bnb",
     "ethereum": "npx tsx index.ts ethereum",

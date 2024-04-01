@@ -1,6 +1,13 @@
 import inquirer from "inquirer";
 import { Network } from "../types";
 
+function counter(startIndex = 0) {
+  let index = startIndex;
+  return () => index = index + 1;
+}
+
+const getNextIndex = counter();
+
 export async function chooseNetwork(): Promise<Network> {
   const questions = [
     {
@@ -9,55 +16,59 @@ export async function chooseNetwork(): Promise<Network> {
       message: "Сеть:",
       choices: [
         {
-          name: "1) Arbitrum",
+          name: `${getNextIndex()}) Arbitrum`,
           value: Network.ARBITRUM,
         },
         {
-          name: "2) Arbitrum Nova",
+          name: `${getNextIndex()}) Arbitrum Nova`,
           value: Network.ARBITRUM_NOVA,
         },
         {
-          name: "3) Base",
+          name: `${getNextIndex()}) Base`,
           value: Network.BASE,
         },
         {
-          name: "4) Blast",
+          name: `${getNextIndex()}) Berachain Testnet`,
+          value: Network.BERACHAIN_TESTNET,
+        },
+        {
+          name: `${getNextIndex()}) Blast`,
           value: Network.BLAST,
         },
         {
-          name: "5) BNB",
+          name: `${getNextIndex()}) BNB`,
           value: Network.BNB,
         },
         {
-          name: "6) Ethereum",
+          name: `${getNextIndex()}) Ethereum`,
           value: Network.ETHEREUM,
         },
         {
-          name: "7) Fantom",
+          name: `${getNextIndex()}) Fantom`,
           value: Network.FANTOM,
         },
         {
-          name: "8) Linea",
+          name: `${getNextIndex()}) Linea`,
           value: Network.LINEA,
         },
         {
-          name: "9) Optimism",
+          name: `${getNextIndex()}) Optimism`,
           value: Network.OPTIMISM,
         },
         {
-          name: "10) Polygon",
+          name: `${getNextIndex()}) Polygon`,
           value: Network.POLYGON,
         },
         {
-          name: "11) Scroll",
+          name: `${getNextIndex()}) Scroll`,
           value: Network.SCROLL,
         },
         {
-          name: "12) zkSync",
+          name: `${getNextIndex()}) zkSync`,
           value: Network.ZKSYNC,
         },
         {
-          name: "13) Zora",
+          name: `${getNextIndex()}) Zora`,
           value: Network.ZORA,
         },
       ],
