@@ -28,6 +28,10 @@ export async function chooseNetwork(): Promise<Network> {
           value: Network.BASE,
         },
         {
+          name: `${getNextIndex()}) Base Goerli`,
+          value: Network.BASE_GOERLI,
+        },
+        {
           name: `${getNextIndex()}) Berachain Testnet`,
           value: Network.BERACHAIN_TESTNET,
         },

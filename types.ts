@@ -2,6 +2,7 @@ export enum Network {
   ARBITRUM = "arbitrum",
   ARBITRUM_NOVA = "arbitrum-nova",
   BASE = "base",
+  BASE_GOERLI = "base-goerli",
   BERACHAIN_TESTNET = "berachain-testnet",
   BLAST = "blast",
   BNB = "bnb",
