@@ -6,9 +6,13 @@ import Cvs from "./modules/csv";
 import { getErc20Balance } from "./modules/erc20";
 import { getNativeBalance } from "./modules/native";
 import { Network } from "./types";
-import { loadFormFile } from "./utils";
+import { getAddressFromWallet, loadFormFile } from "./utils";
 
 const wallets = await loadFormFile(WALLETS_FILENAME);
+const addresses = wallets.map(getAddressFromWallet);
+const isWalletsContainPrivateKeys = wallets.some((wallet) =>
+  wallet.length > 42
+);
 
 const networkArg = process.argv[2] as Network;
 let network = networkArg;
@@ -18,7 +22,7 @@ if (!network) {
 }
 
 console.time("Время");
-cli.spinner(`Загружаю данные, ${wallets.length} адресов`);
+cli.spinner(`Загружаю данные, ${addresses.length} адресов`);
 
 const columns = CONFIG[network].COLUMNS;
 const csv = new Cvs(network);
@@ -26,18 +30,30 @@ const csv = new Cvs(network);
 const data = await Promise.all(
   columns.map((token) => {
     if (token === "native") {
-      return getNativeBalance(network, wallets);
+      return getNativeBalance(network, addresses);
     }
 
-    return getErc20Balance(network, wallets, token);
+    return getErc20Balance(network, addresses, token);
   }),
 );
 
-csv.write(["Address", ...data.map((item) => item.header)]);
+const walletColumns = isWalletsContainPrivateKeys
+  ? ["Address", "PrivateKey"]
+  : ["Address"];
+const csvHeader = [...walletColumns, ...data.map((item) => item.header)];
+csv.write(csvHeader);
 
 for (let i = 0; i < wallets.length; i++) {
-  const address = wallets[i];
-  csv.write([address, ...data.map((item) => item.balances[i])]);
+  const wallet = wallets[i];
+  const address = addresses[i];
+
+  const privateKey = wallet !== address ? wallet : "";
+  const walletColumns = isWalletsContainPrivateKeys
+    ? [address, privateKey]
+    : [address];
+  const row = [...walletColumns, ...data.map((item) => item.balances[i])];
+
+  csv.write(row);
 }
 
 csv.close();
