@@ -10,6 +10,7 @@
     "arbitrum-nova": "npx tsx index.ts arbitrum-nova",
     "base": "npx tsx index.ts base",
     "base-goerli": "npx tsx index.ts base-goerli",
+    "base-sepolia": "npx tsx index.ts base-sepolia",
     "berachain-testnet": "npx tsx index.ts berachain-testnet",
     "blast": "npx tsx index.ts blast",
     "bnb": "npx tsx index.ts bnb",
