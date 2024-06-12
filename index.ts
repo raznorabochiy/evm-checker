@@ -10,9 +10,6 @@ import { getAddressFromWallet, loadFormFile } from "./utils";
 
 const wallets = await loadFormFile(WALLETS_FILENAME);
 const addresses = wallets.map(getAddressFromWallet);
-const isWalletsContainPrivateKeys = wallets.some((wallet) =>
-  wallet.length > 42
-);
 
 const networkArg = process.argv[2] as Network;
 let network = networkArg;
@@ -37,9 +34,7 @@ const data = await Promise.all(
   }),
 );
 
-const walletColumns = isWalletsContainPrivateKeys
-  ? ["Address", "PrivateKey"]
-  : ["Address"];
+const walletColumns = ["Address"];
 const csvHeader = [...walletColumns, ...data.map((item) => item.header)];
 csv.write(csvHeader);
 
@@ -48,9 +43,7 @@ for (let i = 0; i < wallets.length; i++) {
   const address = addresses[i];
 
   const privateKey = wallet !== address ? wallet : "";
-  const walletColumns = isWalletsContainPrivateKeys
-    ? [address, privateKey]
-    : [address];
+  const walletColumns = [address];
   const row = [...walletColumns, ...data.map((item) => item.balances[i])];
 
   csv.write(row);
