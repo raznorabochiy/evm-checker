@@ -10,6 +10,11 @@ import {
   RPC_URL as RPC_URL_ARBITRUM_NOVA,
 } from "./arbitrum-nova";
 
+import {
+  COLUMNS as COLUMNS_AVALANCHE,
+  RPC_URL as RPC_URL_AVALANCHE,
+} from "./avalanche";
+
 import { COLUMNS as COLUMNS_BASE, RPC_URL as RPC_URL_BASE } from "./base";
 
 import {
@@ -63,6 +68,10 @@ export const CONFIG: Config = {
   [Network.ARBITRUM_NOVA]: {
     RPC_URL: RPC_URL_ARBITRUM_NOVA,
     COLUMNS: COLUMNS_ARBITRUM_NOVA,
+  },
+  [Network.AVALANCHE]: {
+    RPC_URL: RPC_URL_AVALANCHE,
+    COLUMNS: COLUMNS_AVALANCHE,
   },
   [Network.BASE]: {
     RPC_URL: RPC_URL_BASE,

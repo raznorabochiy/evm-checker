@@ -24,6 +24,10 @@ export async function chooseNetwork(): Promise<Network> {
           value: Network.ARBITRUM_NOVA,
         },
         {
+          name: `${getNextIndex()}) Avalanche`,
+          value: Network.AVALANCHE,
+        },
+        {
           name: `${getNextIndex()}) Base`,
           value: Network.BASE,
         },

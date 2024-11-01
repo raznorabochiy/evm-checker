@@ -8,6 +8,7 @@
     "start": "npx tsx index.ts",
     "arbitrum": "npx tsx index.ts arbitrum",
     "arbitrum-nova": "npx tsx index.ts arbitrum-nova",
+    "avalanche": "npx tsx index.ts avalanche",
     "base": "npx tsx index.ts base",
     "base-goerli": "npx tsx index.ts base-goerli",
     "berachain-testnet": "npx tsx index.ts berachain-testnet",

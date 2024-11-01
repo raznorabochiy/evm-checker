@@ -1,4 +1,4 @@
-export const RPC_URL = "https://polygon.llamarpc.com";
+export const RPC_URL = "https://polygon-mainnet.public.blastapi.io";
 
 const USDC = "0x2791bca1f2de4661ed88a30c99a7a9449aa84174";
 const USDT = "0xc2132d05d31c914a87c6611c10748aeb04b58e8f";
