@@ -23,6 +23,11 @@ import {
 } from "./base-goerli";
 
 import {
+  COLUMNS as COLUMNS_BASE_SEPOLIA,
+  RPC_URL as RPC_URL_BASE_SEPOLIA,
+} from "./base-sepolia";
+
+import {
   COLUMNS as COLUMNS_BERACHAIN_TESTNET,
   RPC_URL as RPC_URL_BERACHAIN_TESTNET,
 } from "./berachain-testnet";
@@ -80,6 +85,10 @@ export const CONFIG: Config = {
   [Network.BASE_GOERLI]: {
     RPC_URL: RPC_URL_BASE_GOERLI,
     COLUMNS: COLUMNS_BASE_GOERLI,
+  },
+  [Network.BASE_SEPOLIA]: {
+    RPC_URL: RPC_URL_BASE_SEPOLIA,
+    COLUMNS: COLUMNS_BASE_SEPOLIA,
   },
   [Network.BERACHAIN_TESTNET]: {
     RPC_URL: RPC_URL_BERACHAIN_TESTNET,
